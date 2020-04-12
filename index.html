@@ -1,0 +1,3365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script language=JavaScript>
+/*        
+        var message = "function disabled";
+        
+        function rtclickcheck(keyp){ if (navigator.appName == "Netscape" && keyp.which == 3){ alert(message); return false; }
+        
+        if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; } }
+        
+        document.onmousedown = rtclickcheck;
+*/
+
+// PER FAR FUNZIONARE IL GIOCO SOLO IN CASO DI CONNESSIONE AD INTERNET: // if(navigator.onLine = false|true) { ... }
+
+        </script>
+        
+<script>
+
+$(document).ready(function(){
+  $(arrayOfDisappearition).click(function(){
+    $(arrayOfDisappearition).hide();
+    //$('#ChooseName').show();
+    //$("#languaggesCanvas").remove();
+  });
+});
+
+function languaggeSettedToJoke(){
+    localStorage.setItem('storage', " ")
+    if (localStorage.getItem('storage')) document.getElementById('country').innerHTML = localStorage.getItem('storage');
+    document.getElementById('country_msg').innerHTML = " ";
+    $(arrayOfDisappearition).show();
+    document.body.removeChild(document.getElementById('indiaEnglishAlphabet'));
+    document.body.removeChild(document.getElementById('indiaIndianAlphabet'));
+}
+
+/*
+window.onbeforeunload = function(){
+    if (document.getElementById('username').textContent == " "){
+     languaggeSettedToJoke();
+    }
+};
+*/
+
+</script>
+
+    <style>
+
+    * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+        }
+
+    img{
+        width: 13%;
+        height: 13%;
+    }
+
+    #country_msg{
+        top: 1%;
+        left: 35%;
+        z-index: 2;
+        position: absolute;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: white;
+        -webkit-text-stroke: 1px black;
+        font-size: 25px;
+        max-width: 500px;
+        text-align: center;
+    }
+
+    .disabled{
+    pointer-events: none;
+  }
+
+    #train {
+      position: relative;
+      cursor: pointer;
+      pointer-events: none;
+      top: 50px;
+      right: 450px;
+  }
+  
+  .invisible-text{
+  text-indent: -9999px;
+  text-align: left;
+  width: 75px;          
+  height: 35px;          
+  }   
+
+  #canvasStart {
+    background: url('SfondoFDP.jpg');
+    border: 1px solid white;
+}
+.element-slide{
+  animation: 2s ease forwards slide-left;
+}
+
+html, body {
+  width:  100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+#start, #ChooseName, #keyboard, #x, #BWM, #BWM2, #BWM3, #BWM4, #BWM5, #BWM6{
+        display: none;
+    }
+        p{
+          display: inline;
+          }
+        .td{
+          position: relative;
+          border-radius: 40%;
+          border: 1px solid black ;
+          width: 100px;
+          background: rgb(92, 81, 81);
+          text-align: center;
+          -moz-box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+          -webkit-box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+          box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+          }
+        .red{
+          color: red;
+          }
+        input{
+          border: transparent;
+          background: transparent;
+          color: black;
+          font-size: 25px;
+          }
+        ::placeholder {
+        color: black
+          }
+        * {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+          }
+          #username{
+            font-family: sans-serif;
+            color: orangered;
+            -webkit-text-stroke: 1px white;
+            z-index: 2; position: absolute;
+            top: -9px;
+            left: 442px;
+            font-size: 27px;
+          }
+          #space{
+            height: 20px;
+            width: 100px;
+            top: 170px;
+            left: 135px;
+          }
+        .chatStyle{
+          position: absolute;
+          z-index: 3;
+          top: 0px;
+          padding: 5px 30px;
+          border: 1px solid orangered;
+          border-radius: 4px;
+          -webkit-box-shadow: inset 1px 6px 12px rgb(238, 236, 144), inset -1px -10px 5px orange, 1px 2px 1px black;
+          -moz-box-shadow: inset 1px 6px 12px rgb(238, 216, 144), inset -1px -10px 5px orangered, 1px 2px 1px black;
+          box-shadow: inset 1px 6px 12px rgb(238, 236, 144), inset -1px -10px 5px orange, 1px 2px 1px black;
+          background-color: orangered;
+          color: white;
+          text-shadow: 1px 1px 1px yellow;
+            }
+    </style>
+
+</head>
+<body>
+  <script src="laboratorio.js"></script>
+
+  <img id="gioca_btn" src="Gioca.png" onclick="play()" ondragstart="return false" unselectable="on" style="z-index: 3; position: absolute; left: 200px; top: 150px; width: 200px; height: 100px;">
+
+  <script>
+    var removeChatButton = document.createElement('BUTTON');
+        removeChatButton.id = "removeChatButton";
+        removeChatButton.onclick = function(){document.getElementById("frame").style.display = "none"; document.body.appendChild(ChatButton); document.body.removeChild(document.getElementById("removeChatButton"));};
+        removeChatButton.setAttribute("class", "chatStyle");
+        removeChatButton.textContent = "Chiudi Chat";
+
+    var ChatButton = document.createElement('BUTTON');
+        ChatButton.id = "ChatButton";
+        ChatButton.onclick = function(){makeChatAppears(); document.body.removeChild(document.getElementById("ChatButton")); document.body.appendChild(removeChatButton)};
+        ChatButton.setAttribute("class", "chatStyle");
+        ChatButton.textContent = "Chat";
+
+    function play(){
+    document.body.removeChild(document.getElementById('gioca_btn'));
+    if(document.getElementById('username').textContent == 'null'){
+      document.getElementById('languagges').style.display = 'block'
+      } 
+      else{
+        document.body.appendChild(ChatButton);
+        changeCanvas();
+        document.getElementById('start').style.display = 'block';
+        setTimeout(() => {
+          if(gender == "male"){
+        document.getElementById('train').src = "Diapositive/1.png"
+      }
+      if(gender == "female"){
+        document.getElementById('train').src = "Diapositive/.png"
+      }
+        }, 1);
+        document.getElementById('username').style.display = 'block'}
+    }
+  </script>
+
+  <div id="languagges" style="display: none;">
+    <img onDragStart="return false" unselectable="on" id="francia" src="./Paesi/Francia.png" style="position: absolute; top: 100px; left: 50px;">
+    <img onDragStart="return false" unselectable="on" id="germania" src="./Paesi/Germania.png" style="position: absolute; top: 100px; left: 200px;">
+    <img onDragStart="return false" unselectable="on" id="india" src="./Paesi/India.png" style="position: absolute; top: 100px; left: 350px;">
+    <img onDragStart="return false" unselectable="on" id="inghilterra" src="./Paesi/Inghilterra.png" style="position: absolute; top: 100px; left: 500px;">
+    <img onDragStart="return false" unselectable="on" id="italia" src="./Paesi/Italia.png" style="position: absolute; top: 200px; left: 50px;">
+    <img onDragStart="return false" unselectable="on" id="olanda" src="./Paesi/Olanda.png" style="position: absolute; top: 200px; left: 200px;">
+    <img onDragStart="return false" unselectable="on" id="portogallo" src="./Paesi/Portogallo.png" style="position: absolute; top: 200px; left: 350px;">
+    <img onDragStart="return false" unselectable="on" id="spagna" src="./Paesi/Spagna.png" style="position: absolute; top: 200px; left: 500px;">
+</div>
+
+    <canvas id="languaggesCanvas" style="/*z-index: 2; position: absolute;*/ width: 638px; height: 335px; border: 1px solid black; background-image: url('Caricamento.png');"></canvas>
+    <!-- <canvas height="360" width="638" style="z-index: 1; position: absolute; background-image: url('GIF Color.gif');"></canvas> -->
+
+    <p id="country_msg"> </p>
+    <p style="display: none;" id="country"> </p>
+
+    <script>
+      function changeCanvas(){
+      document.getElementById('languaggesCanvas').style.background = "url('SfondoFDP.jpg')";
+      };
+
+        var button = document.createElement('button');
+            button.textContent = "आप इनमें से किस वर्णमाला को भारतीय भाषा के लिए पसंद करते हैं?";
+            button.style.left = 50 + "px";
+            button.style.top = 100 + "px";
+            button.style.position = "absolute";
+            button.style.zIndex = 2;
+            button.style.width = 230 + "px";
+            button.style.height = 100 + "px";
+            button.style.fontSize = 20 + "px";
+            button.style.background = "brown";
+            button.style.color = "white"
+            button.id = "indiaEnglishAlphabet";
+            button.setAttribute("onclick","india1()");
+            button.addEventListener('click', event => {
+              /*
+              document.getElementById('BWM').style.display = "block";
+              document.getElementById('BWM2').style.display = "block";
+              document.getElementById('BWM3').style.display = "block";
+              document.getElementById('BWM4').style.display = "block";
+              document.getElementById('BWM5').style.display = "block";
+              document.getElementById('BWM6').style.display = "block";
+              */
+            });
+
+
+        var button2 = document.createElement('button');
+            button2.textContent = "aaap inamen se kis varnamaala ko bhaarateey bhaasha ke lie pasand karate hain?";
+            button2.style.left = 350 + "px";
+            button2.style.top = 100 + "px";
+            button2.style.position = "absolute";
+            button2.style.zIndex = 2;
+            button2.style.width = 230 + "px";
+            button2.style.height = 100 + "px";
+            button2.style.fontSize = 20 + "px";
+            button2.style.background = "brown";
+            button2.style.color = "white"
+            button2.id = "indiaIndianAlphabet";
+            button2.setAttribute("onclick","india2()");
+            button2.addEventListener('click', event => {
+              /*
+              document.getElementById('BWM').style.display = "block";
+              document.getElementById('BWM2').style.display = "block";
+              document.getElementById('BWM3').style.display = "block";
+              document.getElementById('BWM4').style.display = "block";
+              document.getElementById('BWM5').style.display = "block";
+              document.getElementById('BWM6').style.display = "block";
+              */
+            });
+
+    var languagge = null;
+
+    var francia = document.getElementById('francia')
+    var germania = document.getElementById('germania')
+    var india = document.getElementById('india')
+    var inghilterra = document.getElementById('inghilterra')
+    var italia = document.getElementById('italia')
+    var olanda = document.getElementById('olanda')
+    var portogallo = document.getElementById('portogallo')
+    var spagna = document.getElementById('spagna')
+
+    var arrayOfDisappearition = [francia, germania, india, inghilterra, italia, olanda, portogallo, spagna];
+
+        var indietro = document.createElement('button');
+            indietro.textContent = "←";
+            indietro.style.top = 3 + "%";
+            indietro.style.left = 2 + "%";
+            indietro.style.position = "absolute";
+            indietro.style.zIndex = 2;
+            indietro.style.width = 50 + "px";
+            indietro.style.height = 40 + "px";
+            indietro.style.fontSize = 20 + "px";
+            indietro.style.background = "tomato";
+            indietro.style.border = "orangered"
+            indietro.id = "indietro";
+            indietro.style.textAlign = "center";
+            indietro.style.fontWeight = "bold";
+            indietro.setAttribute("onclick", "document.getElementById('keyboard').style.display = \"none\"");
+            indietro.addEventListener('click', event => {
+                languaggeSettedToJoke();
+                document.body.removeChild(document.getElementById('indietro'));
+                document.getElementById('username').style.display = "none";
+                document.body.removeChild(document.getElementById('MaleFreya'));
+                document.body.removeChild(document.getElementById('FemaleFreya'));
+            });
+            indietro.addEventListener('click', event => {
+                document.body.removeChild(document.getElementById('indietro'));
+                $("#BWM").hide();
+                $("#BWM2").hide();
+                $("#BWM3").hide();
+                $("#BWM4").hide();
+                $("#BWM5").hide();
+                $("#BWM6").hide();
+                document.getElementById('username').style.display = "none";
+                document.body.removeChild(document.getElementById('MaleFreya'));
+                document.body.removeChild(document.getElementById('FemaleFreya'));
+            });
+            
+            var indietro2 = document.createElement('button');
+            indietro2.textContent = "←";
+            indietro2.style.top = 3 + "%";
+            indietro2.style.left = 2 + "%";
+            indietro2.style.position = "absolute";
+            indietro2.style.zIndex = 2;
+            indietro2.style.width = 50 + "px";
+            indietro2.style.height = 40 + "px";
+            indietro2.style.fontSize = 20 + "px";
+            indietro2.style.background = "tomato";
+            indietro2.style.border = "orangered"
+            indietro2.id = "indietro2";
+            indietro2.style.textAlign = "center";
+            indietro2.style.fontWeight = "bold";
+            indietro2.addEventListener('click', event => {
+                document.body.appendChild(button);
+                document.body.appendChild(button2);
+                document.getElementById('country_msg').innerHTML = " ";
+                // document.body.removeChild(document.getElementById('MaleFreya'));
+                // document.body.removeChild(document.getElementById('FemaleFreya'));
+                if (localStorage.getItem('storage')) document.getElementById('country').innerHTML = localStorage.getItem('storage');
+                document.getElementById('country').innerHTML = " ";
+                document.body.removeChild(document.getElementById('indietro2'));
+                document.body.appendChild(indietro);
+                document.getElementById('keyboard').style.display = "none";
+                document.getElementById('BWM').style.display = "none";
+                document.getElementById('BWM2').style.display = "none";
+                document.getElementById('BWM3').style.display = "none";
+                document.getElementById('BWM4').style.display = "none";
+                document.getElementById('BWM5').style.display = "none";
+                document.getElementById('BWM6').style.display = "none";
+                document.getElementById('username').style.display = "none";
+                document.body.removeChild(document.getElementById('MaleFreya'));
+                document.body.removeChild(document.getElementById('FemaleFreya'));
+            });
+
+            var indietro3 = document.createElement('button');
+            indietro3.textContent = "←";
+            indietro3.style.top = 3 + "%";
+            indietro3.style.left = 2 + "%";
+            indietro3.style.position = "absolute";
+            indietro3.style.zIndex = 2;
+            indietro3.style.width = 50 + "px";
+            indietro3.style.height = 40 + "px";
+            indietro3.style.fontSize = 20 + "px";
+            indietro3.style.background = "tomato";
+            indietro3.style.border = "orangered"
+            indietro3.id = "indietro3";
+            indietro3.style.textAlign = "center";
+            indietro3.style.fontWeight = "bold";
+            
+            // Cancellando il valore nell'input e posizionando la barra digitatrice all'inizio
+            indietro3.addEventListener('click', event => {
+              var iChar = 0;
+              var intChar = setInterval(() => {
+                buttonForWrittingMachine = document.getElementById('clear');
+                move(); iChar++; if(iChar == 13){clearInterval(intChar)};
+                str = calculator.display.value.slice(0, -1); calculator.display.value = str;
+                if(charactersNumber > 1){
+                  writeNumber = writeNumber - 12;
+                  document.getElementById('storto').style.left = writeNumber + "px";
+                  console.log(charactersNumber);
+                  $(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);
+                  setTimeout(() => {
+                      charactersNumber = charactersNumber - 1;
+                      console.log(charactersNumber);
+                  }, 1);
+              }}, 100)
+              // Mission completed
+
+              document.getElementById('BWM').style.display = "none";
+              document.getElementById('BWM2').style.display = "none";
+              document.getElementById('BWM3').style.display = "none";
+              document.getElementById('BWM4').style.display = "none";
+              document.getElementById('BWM5').style.display = "none";
+              document.getElementById('BWM6').style.display = "none";
+              document.getElementById('submit').style.display = "none";
+              document.getElementById('keyboard').style.display = "none";
+               document.body.removeChild(indietro3);
+               document.body.appendChild(indietro);
+                document.body.appendChild(imgMale);
+                document.body.appendChild(imgFemale);
+
+            // });
+            // indietro3.addEventListener('click', event => {
+              
+              var country = document.getElementById("country");
+
+              if(country.textContent == "francese"){
+                document.getElementById('country_msg').innerHTML = "Voulez-vous commencer avec une peau masculine ou une peau féminine?";
+              }
+              else if(country.textContent == "tedesco"){
+                document.getElementById('country_msg').innerHTML = "Möchten Sie mit einer männlichen oder weiblichen Haut beginnen?";
+              }
+              else if(country.textContent == "indiano-indAlph"){
+                document.getElementById('country_msg').innerHTML = "क्या आप पुरुष त्वचा या महिला त्वचा के साथ शुरुआत करना चाहते हैं?";
+              }
+              else if(country.textContent == "indiano-engAlph"){
+                document.getElementById('country_msg').innerHTML = "Voulez-vous jouer une peau masculine ou une peau féminine?";
+              }
+              else if(country.textContent == "inglese"){
+                document.getElementById('country_msg').innerHTML = "Do you want to start using a male skin or a female skin?";
+              }
+              else if(country.textContent == "italiano"){
+                document.getElementById('country_msg').innerHTML = "Vuoi cominciare con una skin maschile o con una skin femminile?";
+              }
+              else if(country.textContent == "olandese"){
+                document.getElementById('country_msg').innerHTML = "Wil je beginnen met een mannelijke huid of een vrouwelijke huid?";
+              }
+              else if(country.textContent == "portoghese"){
+                document.getElementById('country_msg').innerHTML = "Deseja começar com uma pele masculina ou feminina?";
+              }
+              else if(country.textContent == "spagnolo"){
+                document.getElementById('country_msg').innerHTML = "¿Quieres comenzar con una piel masculina o una piel femenina?";
+              }
+            })
+
+            var gender = null;
+
+            var imgMale = document.createElement('img');
+            imgMale.style.top = 130 + "px";
+            imgMale.style.left = 50 + "px";
+            imgMale.style.position = "absolute";
+            imgMale.style.zIndex = 2;
+            imgMale.style.width = 200 + "px";
+            imgMale.style.height = 200 + "px";
+            imgMale.style.border = "3px solid #0000CD";
+            imgMale.id = "MaleFreya";
+            imgMale.src = "MaleOption.jpg";
+            imgMale.setAttribute("onDragStart", "return false");
+            imgMale.addEventListener('click', event => {
+
+              gender = "male";
+              localStorage.setItem('gender', gender)
+              if (localStorage.getItem('gender')) gender = localStorage.getItem('gender');
+
+              document.getElementById('submit').style.display = "block";
+              removeFemaleAndMale()
+              var country = document.getElementById("country");
+
+              if(country.textContent == "francese"){
+                document.getElementById('country_msg').innerHTML = "Choisissez votre nom";
+              }
+              else if(country.textContent == "tedesco"){
+                document.getElementById('country_msg').innerHTML = "Wähle deinen Namen";
+              }
+              else if(country.textContent == "indiano-indAlph"){
+                document.getElementById('country_msg').innerHTML = "अपना नाम चुनें";
+              }
+              else if(country.textContent == "indiano-engAlph"){
+                document.getElementById('country_msg').innerHTML = "apana naam chunen";
+              }
+              else if(country.textContent == "inglese"){
+                document.getElementById('country_msg').innerHTML = "Choose your name";
+              }
+              else if(country.textContent == "italiano"){
+                document.getElementById('country_msg').innerHTML = "Scegli il tuo nome";
+              }
+              else if(country.textContent == "olandese"){
+                document.getElementById('country_msg').innerHTML = "Kies je naam";
+              }
+              else if(country.textContent == "portoghese"){
+                document.getElementById('country_msg').innerHTML = "Escolha seu nome";
+              }
+              else if(country.textContent == "spagnolo"){
+                document.getElementById('country_msg').innerHTML = "Elige tu nombre";
+              }
+              })
+
+              imgMale.addEventListener('click', event => {
+
+              document.getElementById('BWM').style.display = "block";
+
+              document.getElementById('BWM2').style.display = "block";
+
+              document.getElementById('BWM3').style.display = "block";
+
+              document.getElementById('BWM4').style.display = "block";
+
+              document.getElementById('BWM5').style.display = "block";
+
+              document.getElementById('BWM6').style.display = "block";
+
+              document.getElementById('keyboard').style.display = "block";
+
+              document.getElementById('ChooseName').style.display = "block";
+
+              appendI3AndRemoveI1AndI2()
+
+              /*
+
+              QUI DEVO USARE L'if PER CAMBIARE LA SCRITTA IN BASE ALLA LINGUA SCELTA
+
+              document.getElementById('country_msg').innerHTML = "Choisissez votre nom";
+
+              document.getElementById('country').innerHTML = "francese";
+
+              localStorage.setItem('storage', "francese")
+              */
+
+              });
+
+            var imgFemale = document.createElement('img');
+            imgFemale.style.top = 130 + "px";
+            imgFemale.style.left = 370 + "px";
+            imgFemale.style.position = "absolute";
+            imgFemale.style.zIndex = 2;
+            imgFemale.style.width = 200 + "px";
+            imgFemale.style.height = 200 + "px";
+            imgFemale.style.border = "3px solid #FE7D68";
+            imgFemale.id = "FemaleFreya";
+            imgFemale.src = "FemaleOption.jpg";
+            imgFemale.setAttribute("onDragStart", "return false");
+            imgFemale.addEventListener('click', event => {
+
+              gender = "female";
+              localStorage.setItem('gender', gender)
+              if (localStorage.getItem('gender')) gender = localStorage.getItem('gender');
+
+              document.getElementById('submit').style.display = "block";
+              removeFemaleAndMale();
+              var country = document.getElementById("country");
+
+              if(country.textContent == "francese"){
+                document.getElementById('country_msg').innerHTML = "Choisissez votre nom";
+              }
+              else if(country.textContent == "tedesco"){
+                document.getElementById('country_msg').innerHTML = "Wähle deinen Namen";
+              }
+              else if(country.textContent == "indiano-indAlph"){
+                document.getElementById('country_msg').innerHTML = "अपना नाम चुनें";
+              }
+              else if(country.textContent == "indiano-engAlph"){
+                document.getElementById('country_msg').innerHTML = "apana naam chunen";
+              }
+              else if(country.textContent == "inglese"){
+                document.getElementById('country_msg').innerHTML = "Choose your name";
+              }
+              else if(country.textContent == "italiano"){
+                document.getElementById('country_msg').innerHTML = "Scegli il tuo nome";
+              }
+              else if(country.textContent == "olandese"){
+                document.getElementById('country_msg').innerHTML = "Kies je naam";
+              }
+              else if(country.textContent == "portoghese"){
+                document.getElementById('country_msg').innerHTML = "Escolha seu nome";
+              }
+              else if(country.textContent == "spagnolo"){
+                document.getElementById('country_msg').innerHTML = "Elige tu nombre";
+              }
+            })
+
+            imgFemale.addEventListener('click', event => {
+
+              document.getElementById('BWM').style.display = "block";
+
+              document.getElementById('BWM2').style.display = "block";
+
+              document.getElementById('BWM3').style.display = "block";
+
+              document.getElementById('BWM4').style.display = "block";
+            
+              document.getElementById('BWM5').style.display = "block";
+
+              document.getElementById('BWM6').style.display = "block";
+
+
+              document.getElementById('keyboard').style.display = "block";
+
+              document.getElementById('ChooseName').style.display = "block";
+
+              appendI3AndRemoveI1AndI2()
+
+              /*
+
+              QUI DEVO USARE L'if PER CAMBIARE LA SCRITTA IN BASE ALLA LINGUA SCELTA
+
+              document.getElementById('country_msg').innerHTML = "Choisissez votre nom";
+
+              document.getElementById('country').innerHTML = "francese";
+
+              localStorage.setItem('storage', "francese")
+              */
+              
+              });
+
+
+            function appendElements(){
+
+            document.body.appendChild(imgMale);
+
+            document.body.appendChild(imgFemale);
+
+            };
+
+            function removeFemaleAndMale(){
+                
+            document.body.removeChild(document.getElementById('MaleFreya'));
+            document.body.removeChild(document.getElementById('FemaleFreya'));
+            
+            }
+
+            function appendI2AndRemoveInd(){
+
+                document.body.removeChild(document.getElementById('indietro'));
+                document.body.appendChild(indietro2);
+
+            }
+
+            function appendI3AndRemoveI1AndI2(){
+
+            document.body.removeChild(document.getElementById('indietro'));
+            document.body.appendChild(indietro3);
+
+}
+
+            window.onload = function () {
+            if (localStorage.getItem('storage')) document.getElementById('country').innerHTML = localStorage.getItem('storage');
+              };
+
+    francia.onclick = function(){
+
+      document.body.appendChild(indietro);
+      appendElements();
+      document.getElementById('country_msg').innerHTML = "Voulez-vous commencer avec une peau masculine ou une peau féminine?";
+      document.getElementById('country').innerHTML = "francese";
+      localStorage.setItem('storage', "francese")
+        }
+
+        window.onload = function () {
+        if (localStorage.getItem('storage')) document.getElementById('country').innerHTML = localStorage.getItem('storage');
+        }
+
+      /*
+        document.getElementById('BWM').style.display = "block";
+
+        document.getElementById('BWM2').style.display = "block";
+
+        document.getElementById('BWM3').style.display = "block";
+
+        document.getElementById('BWM4').style.display = "block";
+
+        document.getElementById('BWM5').style.display = "block";
+
+        document.getElementById('BWM6').style.display = "block";
+
+        // appendElements();
+
+        document.getElementById('keyboard').style.display = "block";
+
+        document.body.appendChild(indietro);
+
+        document.getElementById('country_msg').innerHTML = "Choisissez votre nom";
+
+        */
+
+    germania.onclick = function(){
+
+      document.body.appendChild(indietro);
+      appendElements();
+      document.getElementById('country_msg').innerHTML = "Möchten Sie mit einer männlichen oder weiblichen Haut beginnen?";
+      document.getElementById('country').innerHTML = "tedesco";
+      localStorage.setItem('storage', "tedesco")
+        }
+
+      /*
+
+        document.getElementById('BWM').style.display = "block";
+
+        document.getElementById('BWM2').style.display = "block";
+
+        document.getElementById('BWM3').style.display = "block";
+
+        document.getElementById('BWM4').style.display = "block";
+
+        document.getElementById('BWM5').style.display = "block";
+
+        document.getElementById('BWM6').style.display = "block";
+
+        document.getElementById('keyboard').style.display = "block";
+
+        document.getElementById('country_msg').innerHTML = "Wähle deinen Namen";
+
+        window.onload = function () {
+        if (localStorage.getItem('storage')) document.getElementById('country').innerHTML = localStorage.getItem('storage');
+        }
+          */
+
+    india.onclick = function(){
+
+        document.body.appendChild(indietro);
+
+        document.body.appendChild(button);
+
+        document.body.appendChild(button2);
+            
+    }
+
+    function removeIndiaButtons(){
+        document.body.removeChild(document.getElementById('indiaEnglishAlphabet'));
+        document.body.removeChild(document.getElementById('indiaIndianAlphabet'));
+    }
+
+    function india1(){
+
+      appendElements();
+      document.getElementById('country_msg').innerHTML = "क्या आप पुरुष त्वचा या महिला त्वचा के साथ शुरुआत करना चाहते हैं?";
+
+        appendI2AndRemoveInd()
+
+        removeIndiaButtons();
+
+        document.getElementById('country').innerHTML = "indiano-indAlph";
+
+        localStorage.setItem('storage', "indiano-indAlph")
+        
+        }
+
+        window.onload = function () {
+        if (localStorage.getItem('storage')) document.getElementById('country').innerHTML = localStorage.getItem('storage');
+
+        }
+
+        function india2(){
+
+          appendElements();
+      document.getElementById('country_msg').innerHTML = "Voulez-vous jouer une peau masculine ou une peau féminine?";
+
+            appendI2AndRemoveInd()
+
+            removeIndiaButtons();
+
+            document.getElementById('country_msg').innerHTML = "kya aap purush tvacha ya mahila tvacha ke saath shuruaat karana chaahate hain?";
+
+            document.getElementById('country').innerHTML = "indiano-engAlph";
+
+            localStorage.setItem('storage', "indiano-engAlph")
+
+            }
+            window.onload = function () {
+            if (localStorage.getItem('storage')) document.getElementById('country').innerHTML = localStorage.getItem('storage');
+
+            }
+
+        inghilterra.onclick = function(){
+
+            document.body.appendChild(indietro);
+            appendElements();
+
+            document.getElementById('country_msg').innerHTML = "Do you want to start using a male skin or a female skin?";
+
+            document.getElementById('country').innerHTML = "inglese";
+
+            localStorage.setItem('storage', "inglese")
+            }
+            window.onload = function () {
+            if (localStorage.getItem('storage')) document.getElementById('country').innerHTML = localStorage.getItem('storage');
+
+            }
+
+        italia.onclick = function(){
+
+            document.body.appendChild(indietro);
+            appendElements();
+
+            document.getElementById('country_msg').innerHTML = "Vuoi cominciare con una skin maschile o con una skin femminile?";
+
+            document.getElementById('country').innerHTML = "italiano";
+
+            localStorage.setItem('storage', "italiano")
+            }
+            window.onload = function () {
+            if (localStorage.getItem('storage')) document.getElementById('country').innerHTML = localStorage.getItem('storage');
+
+            }
+
+        olanda.onclick = function(){
+
+            document.body.appendChild(indietro);
+            appendElements();
+
+            document.getElementById('country_msg').innerHTML = "Wil je beginnen met een mannelijke huid of een vrouwelijke huid?";
+
+            document.getElementById('country').innerHTML = "olandese";
+
+            localStorage.setItem('storage', "olandese")
+            }
+            window.onload = function () {
+            if (localStorage.getItem('storage')) document.getElementById('country').innerHTML = localStorage.getItem('storage');
+
+            }
+
+            portogallo.onclick = function(){
+
+            document.body.appendChild(indietro);
+            appendElements();
+
+            document.getElementById('country_msg').innerHTML = "Deseja começar com uma pele masculina ou feminina?";
+
+            document.getElementById('country').innerHTML = "portoghese";
+
+            localStorage.setItem('storage', "portoghese")
+            }
+            window.onload = function () {
+            if (localStorage.getItem('storage')) document.getElementById('country').innerHTML = localStorage.getItem('storage');
+
+            }
+
+            spagna.onclick = function(){
+
+            document.body.appendChild(indietro);
+            appendElements();
+
+            document.getElementById('country_msg').innerHTML = "¿Quieres comenzar con una piel masculina o una piel femenina?";
+
+            document.getElementById('country').innerHTML = "spagnolo";
+
+            localStorage.setItem('storage', "spagnolo")
+            }
+            window.onload = function () {
+            if (localStorage.getItem('storage')) document.getElementById('country').innerHTML = localStorage.getItem('storage');
+
+            }
+
+        var conditionChatApparence = "not done yet";
+        function makeChatAppears(){
+        document.getElementById('frame').style.display = "block";
+        if(conditionChatApparence == "not done yet"){
+        document.getElementById('frame').contentWindow.document.open();
+        document.getElementById('frame').contentWindow.document.write('<!DOCTYPE html> <html> <head> <script type="text\/javascript" src="https:\/\/cdn.scaledrone.com\/scaledrone.min.js"><\/script> <!--<script type="text\/javascript" src="http://0.0.0.0:8080\/scaledrone.js"><\/script>--> <meta charset="utf-8"> <meta name="viewport" content="width=device-width"> <style> body { box-sizing: border-box; margin: 0; padding: 13px; display: flex; flex-direction: column; max-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; } .members-count, .members-list, .messages { border: 1px solid #e4e4e4; padding: 15px; margin-bottom: 15px; } .messages { flex-shrink: 1; overflow: auto; } .message { padding: 5px 0; } .message .member { display: inline-block; } .member { padding-right: 10px; position: relative; } .message-form { display: flex; flex-shrink: 0; } .message-form__input { flex-grow: 1; border: 1px solid #dfdfdf; padding: 10px 15px; font-size: 16px; } .message-form__button { margin: 10px; } <\/style> <\/head> <body> <p id="username2"><\/p> <div class="members-count">-<\/div> <div class="members-list">-<\/div> <div class="messages"><\/div> <form class="message-form" onsubmit="return false;"> <input id="message" class="message-form__input" placeholder="Type a message.." type="text"\/> <input class="message-form__button" id="send" value="Send" type="submit"\/> <\/form> <script>const CLIENT_ID = "rMi86FVmBjYZ6nIo"; const drone = new ScaleDrone(CLIENT_ID, { data: { name: " ' + document.getElementById("username").textContent + '", color: getRandomColor(), }, }); let members = []; var numberr = 0; drone.on("open", error => { if (error) { return console.error(error); } console.log("Successfully connected to Scaledrone"); const room = drone.subscribe("observable-room"); room.on("open", error => { if (error) { return console.error(error); } console.log("Successfully joined room"); }); room.on("members", m => { members = m; updateMembersDOM(); }); room.on("member_join", member => { members.push(member); updateMembersDOM(); }); room.on("member_leave", ({id}) => { const index = members.findIndex(member => member.id === id); members.splice(index, 1); updateMembersDOM(); }); room.on("data", (text, member) => { if (member) { addMessageToListDOM(text, member); } else { } }); }); drone.on("close", event => { console.log("Connection was closed", event); }); drone.on("error", error => { console.error(error); }); function getRandomColor() { return "#" + Math.floor(Math.random() * 0xFFFFFF).toString(16); } const DOM = { membersCount: document.querySelector(".members-count"), membersList: document.querySelector(".members-list"), messages: document.querySelector(".messages"), input: document.querySelector(".message-form__input"), form: document.querySelector(".message-form"), }; DOM.form.addEventListener("submit", sendMessage); function sendMessage() { const value = DOM.input.value; if (value === "") { return; } DOM.input.value = ""; drone.publish({ room: "observable-room", message: value, }); } function createMemberElement(member) { const { name, color } = member.clientData; const el = document.createElement("div"); el.appendChild(document.createTextNode(name)); el.className = "member"; el.style.color = color; el.id = "username"; return el; } function updateMembersDOM() { DOM.membersCount.innerText = `${members.length} users in room:`; DOM.membersList.innerHTML = ""; members.forEach(member => DOM.membersList.appendChild(createMemberElement(member)) ); } function createMessageElement(text, member) { const el = document.createElement("div"); el.appendChild(createMemberElement(member)); el.appendChild(document.createTextNode(text)); el.className = "message"; el.id = "m" + numberr; return el; } function addMessageToListDOM(text, member) { const el = DOM.messages; const wasTop = el.scrollTop === el.scrollHeight - el.clientHeight; el.appendChild(createMessageElement(text, member)); if (wasTop) { el.scrollTop = el.scrollHeight - el.clientHeight; } }<\/script> <\/body> <\/html>');
+        document.getElementById('frame').contentWindow.document.close();
+        conditionChatApparence = "already done";
+          }
+        }
+
+        function whatMustAppear(){
+      if (document.getElementById('username').textContent == 'null'){
+        makeChooseNameAppear()
+      }
+      else{
+        makeStartAppear()
+      }
+    }
+
+    function makeChooseNameAppear(){
+      document.getElementById("keyboard").style.display = "block";
+      //document.getElementById('username').style.display = "block";
+    }
+    function makeStartAppear(){
+      if(gender == "male"){
+        document.getElementById('train').src = "Diapositive/1.png";
+        document.body.appendChild(ChatButton);
+      }
+      else if(gender == "female"){
+        document.getElementById('train').src = "Diapositive/.png";
+        document.appendChild(ChatButton);
+      }
+      document.body.removeChild(document.getElementById('country_msg'));
+      document.body.removeChild(document.getElementById('ChooseName'));
+      document.body.removeChild(document.getElementById('KEYBOARD'));
+      document.body.removeChild(document.getElementById('indietro'));
+      document.body.removeChild(document.getElementById('indietro2'));
+      //document.getElementById('username').style.display = "block";
+    }
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="position: absolute; top: -30px; left: -20px;" id="KEYBOARD" ondragstart="return false" unselectable="on">
+<img id="BWM" src="buttonsOfWritingMachine.png" style="z-index: 2; width: 400px; height: 250px; top: 78px; left: 190px; position: absolute;">
+  <img id="BWM2" src="Writing machine/Parte di sotto.png" style="z-index: 1; width: 320px; height: 225px; top: 88px; left: 358px; position: absolute;">
+  <img id="BWM3" src="Writing machine/metaadellacosadisotto.png" style="color: rgba(245, 245, 245, 0.137); z-index: 1; width: 390px; height: 213px; top: 91px; left: 125px; position: absolute;">
+  <img id="BWM4" style="z-index: 1; position: absolute; top: 231px; left: 380px; width: 60px; height: 107px;" src="Writing machine/PerUnireLeDueParti.png">
+  <img id="BWM5" style="z-index: 1; position: absolute; top: 57px; left: 380px; width: 60px; height: 107px;" src="Writing machine/PerUnireLeDueParti.png">
+  <div id="BWM6">
+  <img id="scorrimento" style="z-index: 2; position: absolute; top: 72px; left: 184px; width: 380px; height: 102px;" src="Writing machine/Scorrimento.png">
+  <img id="scorrimento2" style="z-index: 0; position: absolute; top: 130px; left: 171px; width: 460px; height: 52px;" src="Writing machine/Scorrimento.png">
+  <img id="scorrimento3" style="z-index: 0; position: absolute; top: 160px; left: 171px; width: 460px; height: 52px;" src="Writing machine/Scorrimento.png">
+  <img id="scorrimento4" style="z-index: 0; position: absolute; top: 195px; left: 171px; width: 460px; height: 52px;" src="Writing machine/Scorrimento.png">
+  <img id="scorrimento5" style="z-index: 0; position: absolute; top: 226px; left: 171px; width: 460px; height: 52px;" src="Writing machine/Scorrimento.png">
+  <img id="scorrimento6" style="z-index: 0; position: absolute; top: 240px; left: 171px; width: 460px; height: 52px;" src="Writing machine/Scorrimento.png">
+  </div>
+  <form id="keyboard" style="z-index: 2; position: absolute; top:75px; left:190px;" name="calculator">
+    
+  <div id="divOfKeyboard" style="z-index: 2; width: 400px; height: 250px;">
+
+    <!-- Promemoria: 1. Inserire il foglio
+                     2. Diminuire i pixel aggiunti dalla barra spaziatrice
+                     3. Fare in modo che la linea verticale su cui si muove la barra spaziatrice sia dentro la macchina da scrivere
+                     4. Far girare il rullo ogni click -->
+
+      <img style="z-index: 3; position: absolute;" id="storto" style="z-index: 3; position: absolute; top: 26px; width: 30px; height: 40px;" src="/Writing machine/Storto.png">
+      <img style="z-index: 1; position: absolute; left: 35px; top: 200px; width: 300px; height: 70px;" src="Writing machine/coso di sotto.png">
+      <img style="z-index: 2; position: absolute; left: -43px; top: 1px; width: 420px; height: 50px;" src="Writing machine/rullo.png">
+
+      <img style="z-index: 1; position: absolute; top: 31px; left: -52px; width: 60px; height: 60px;" src="Writing machine/cosi.png">
+      <img style="z-index: 1; position: absolute; top: 31px; left: 359px; width: 60px; height: 60px;" src="Writing machine/cosi.png">
+
+      <table style="margin-top:20px; position: relative;">
+        <tr>
+          <input name="displayresult" id="display" style="width: 300px; z-index: 2; position: absolute; top:10px; left: 10px;" class="cal-input" disabled>
+        </tr>
+      </table>
+      <table border="0px" cellspacing="10px" style="margin-top:5px;">
+
+        <tr>
+          <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" id="1" value="1" class="cal-number">1</td>
+          <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" id="2" value="2" class="cal-number">2</td>
+          <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" id="3" value="3" class="cal-number">3</td>
+          <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" id="4" value="4" class="cal-number">4</td>
+          <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" id="5" value="5" class="cal-number">5</td>
+          <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" id="6" value="6" class="cal-number">6</td>
+          <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" id="7" id="7" value="7" class="cal-number">7</td>
+          <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" id="8" id="8" value="8" class="cal-number">8</td>
+          <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" id="9" value="9" class="cal-number">9</td>
+          <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" id="0" value="0" class="cal-number">0</td>
+      </tr>
+
+    <tr>
+      <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" id="q" value="q" class="cal-top">q</td>
+      <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" id="w" value="w" class="cal-top">w</td>
+      <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" class="operator cal-top" id="e" value="e">e</td>
+      <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" id="r" value="r" class="cal-top">r</td>
+      <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" id="t" value="t" class="cal-top">t</td>
+      <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" class="operator cal-top" id="y" value="y">y</td>
+      <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" class="operator cal-top" id="u" value="e">u</td>
+      <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" id="i" value="r" class="cal-top">i</td>
+      <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" id="o" value="t" class="cal-top">o</td>
+      <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" class="operator cal-top" id="p" value="y">p</td>
+      <td class="td" id="clear" name="clear" value="c" class=" cal-top"> ← </td>
+    </tr>
+    
+    <tr id="keyboard_line_with_maiusc">
+      <td class="td" id="maiusc" style="font-size: 10px" onclick="UpperOrLowerCase = 'Upper'; document.getElementById('divOfKeyboard').style.textTransform = 'uppercase'; document.getElementById('keyboard_line_with_maiusc').replaceChild(td, document.getElementById('maiusc'));">MAIUSC</td>
+      <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" id="a" value="q" class="cal-top">a</td>
+      <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" id="s" value="w" class="cal-top">s</td>
+      <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" class="operator cal-top" id="d" value="e">d</td>
+      <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" id="f" value="r" class="cal-top">f</td>
+      <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" id="g" value="t" class="cal-top">g</td>
+      <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" class="operator cal-top" id="h" value="y">h</td>
+      <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" class="operator cal-top" id="j" value="e">j</td>
+      <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" id="k" value="r" class="cal-top">k</td>
+      <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" id="l" value="t" class="cal-top">l</td>
+    </tr>
+
+    <tr>
+      <td style="border: transparent; background: transparent;"></td>
+      <td style="border: transparent; background: transparent;"></td>
+      <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" id="z" value="q" class="cal-top">z</td>
+      <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" id="x" value="w" class="cal-top">x</td>
+      <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" class="operator cal-top" id="c" value="e">c</td>
+      <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" id="v" value="r" class="cal-top">v</td>
+      <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" id="b" value="t" class="cal-top">b</td>
+      <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" class="operator cal-top" id="n" value="y">n</td>
+      <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250);}" class="td" class="operator cal-top" id="m" value="e">m</td>
+    </tr>
+      <div style="z-index: 2;" class="td" class="operator cal-top" id="space" value=" "></div>
+
+        <script src="macchinaDaScrivere.js"></script>
+        
+      </table>
+    </div>
+  </form>
+</div>
+
+
+
+
+<script src="FreyaGoAhead.js"></script>
+
+
+<script>
+  var done = 'false';
+</script>
+
+
+
+
+<strong><big><big></big><div id="x"> </div></big></big></big></strong>
+<div id="start">
+  <img onDragStart="return false" unselectable="on" style="z-index: 2; position: absolute; top: 35px; left: 330px; right: 450px; width: 300px; height: 300px" id="train" name="train" src="Diapositive/1.png">
+ <button style="z-index: 2; position: absolute; top:205px; left:520px;" id="move" onclick="freyaAhead()">&lt</button>
+<button onclick="document.body.removeChild(document.getElementById('ChatButton')); goToLab(); if(done == 'false'){giveColorToPotions(); done = 'true';}" style="position: absolute; top: 300px;">Potions</button>
+
+ <iframe id="frame" style="position: absolute; top: 0px; background-color: white;z-index: 3; display: none; width: 638px; height: 335px; border: 1px solid black;"></iframe>
+
+ </div>
+
+</div>
+
+<p id="username" style="display: none"></p>
+
+<div id="ChooseName">   
+<!-- <input type="text" id="input"> -->
+  <button style="position: absolute; top: 300px; left: 10px;" id="submit" onclick="Input(); makeStartAppear();">Submit</button>
+
+  <script>
+          Input = function () {
+            document.getElementById('username').style.display = "block";
+            document.getElementById('username').innerHTML = document.getElementById('display').value;
+            // username = document.getElementById('display').value;
+            localStorage.setItem('nicknamee', document.getElementById('display').value)
+            changeCanvas();
+            document.getElementById('start').style.display = "block";
+            document.body.removeChild(document.getElementById('indietro3'));
+            }
+            window.onload = function(){
+              function trimQuotationMark(QuotationMarks) {
+              return QuotationMarks.replace('"','').replace('"','');
+                }
+            var UserAndLang = { username: localStorage.getItem("nicknamee"), languagge: localStorage.getItem("storage"), genderr: localStorage.getItem("gender")};
+            document.getElementById("username").innerHTML = trimQuotationMark(JSON.stringify(UserAndLang.username));
+            document.getElementById("country").innerHTML = trimQuotationMark(JSON.stringify(UserAndLang.languagge));
+            gender = trimQuotationMark(JSON.stringify(UserAndLang.genderr));
+            // var username = trimQuotationMark(JSON.stringify(UserAndLang.username));
+            }
+
+  </script>
+
+  </div>
+
+
+
+<style>
+  #LabCanvas {
+  height: 335px;
+  width: 638px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  background: transparent;/* background-image: url('LabWithoutPotions.jpg'); */
+  display: none;
+}
+
+iframe {
+  position: absolute;
+  height: 335px;
+  width: 638px;
+  top: 40px;
+  background: transparent;
+}
+
+#content {
+margin: 500px;
+/*
+height: 800px;
+width: 2000px;
+*/
+position: relative;
+cursor: pointer;
+}
+
+  p.sansserif {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    color: black;
+    -webkit-text-stroke: 2px #673AB7;
+    font-size: 35px;
+    /*text-shadow: 0 0 1px #FF0000, 0 0 5px #0000FF;*/
+    z-index: 3;
+    position: absolute;
+    left: 200px;
+  }
+  
+  /*
+  #sans {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    color: black;
+    font-size: 30px;
+    position: absolute;
+    top: 1px;
+    }
+    */
+</style>
+
+<div id="LabCanvas">
+  <div class="potions-function" style="z-index: 3;
+  position: absolute;
+  left: 50px;
+  top: 6px;
+  width: 150px;
+  height: 150px;
+  background-color: transparent;">
+</div>
+<div class="potions-function" style="z-index: 3;
+position: absolute;
+left: 250px;
+top: 6px;
+width: 150px;
+height: 150px;
+background-color: transparent;">
+</div>
+<div class="potions-function" style="z-index: 3;
+position: absolute;
+left: 450px;
+top: 6px;
+width: 150px;
+height: 150px;
+background-color: transparent;">
+</div>
+
+<div class="potions-function" style="z-index: 3;
+position: absolute;
+left: 50px;
+top: 156px;
+width: 150px;
+height: 150px;
+background-color: transparent;">
+</div>
+<div class="potions-function" style="z-index: 3;
+position: absolute;
+left: 250px;
+top: 156px;
+width: 150px;
+height: 150px;
+background-color: transparent;">
+</div>
+<div class="potions-function" style="z-index: 3;
+position: absolute;
+left: 450px;
+top: 156px;
+width: 150px;
+height: 150px;
+background-color: transparent;">
+</div>
+
+  <strong><p class="sansserif">PILA POZIONI 1</p></strong>
+
+  <img src="Laboratorio.png" onDragStart="return false" unselectable="on" style="z-index: 2; position: absolute; width: 638px; height: 335px; top: -500px; left: -500px;" id="content"></img>
+</div>
+
+<div id="potions-colors" style="display: none;">
+<div class="potions-color" style="z-index: 1;
+position: absolute;
+left: 50px;
+top: 6px;
+width: 150px;
+height: 150px;">
+</div>
+<div class="potions-color" style="z-index: 1;
+position: absolute;
+left: 250px;
+top: 6px;
+width: 150px;
+height: 150px;
+background-color: transparent;">
+</div>
+<div class="potions-color" style="z-index: 1;
+position: absolute;
+left: 450px;
+top: 6px;
+width: 150px;
+height: 150px;
+background-color: transparent;">
+</div>
+
+<div class="potions-color" style="z-index: 1;
+position: absolute;
+left: 50px;
+top: 156px;
+width: 150px;
+height: 150px;
+background-color: transparent;">
+</div>
+<div class="potions-color" style="z-index: 1;
+position: absolute;
+left: 250px;
+top: 156px;
+width: 150px;
+height: 150px;
+background-color: transparent;">
+</div>
+<div class="potions-color" style="z-index: 1;
+position: absolute;
+left: 450px;
+top: 156px;
+width: 150px;
+height: 150px;
+background-color: transparent;">
+</div>
+</div>
+<script>
+  var i = 1;
+</script>
+<script src="arrayPotions.js"></script>
+<button id=">" style="z-index: 4; position: absolute; top: 300px; display: none;" onclick="if(i <= 23){i++; document.getElementsByClassName('sansserif')[0].textContent = 'PILA POZIONI ' + i; giveColorToPotions()};">></button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <div style="display: none;">
+    <article id="names" class="color-names js-content fixed" vocab="https://schema.org/" typeof="Article">
+  
+      <section id="red">
+        <table>
+          <tbody><tr class="head">
+            <th><h5>Red HTML Color Names</h5></th>
+          </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#CD5C5C;" data-hex="#CD5C5C" data-rgb="205, 92, 92" data-hsl="0, 53%, 58%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">IndianRed</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#CD5C5C</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(205, 92, 92)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#F08080;" data-hex="#F08080" data-rgb="240, 128, 128" data-hsl="0, 79%, 72%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">LightCoral</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#F08080</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(240, 128, 128)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FA8072;" data-hex="#FA8072" data-rgb="250, 128, 114" data-hsl="6, 93%, 71%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Salmon</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FA8072</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(250, 128, 114)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#E9967A;" data-hex="#E9967A" data-rgb="233, 150, 122" data-hsl="15, 72%, 70%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">DarkSalmon</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#E9967A</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(233, 150, 122)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FFA07A;" data-hex="#FFA07A" data-rgb="255, 160, 122" data-hsl="17, 100%, 74%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">LightSalmon</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FFA07A</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 160, 122)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#DC143C;" data-hex="#DC143C" data-rgb="220, 20, 60" data-hsl="348, 83%, 47%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Crimson</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#DC143C</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(220, 20, 60)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FF0000;" data-hex="#FF0000" data-rgb="255, 0, 0" data-hsl="0, 100%, 50%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Red</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FF0000</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 0, 0)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#B22222;" data-hex="#B22222" data-rgb="178, 34, 34" data-hsl="0, 68%, 42%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">FireBrick</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#B22222</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(178, 34, 34)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#8B0000;" data-hex="#8B0000" data-rgb="139, 0, 0" data-hsl="0, 100%, 27%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">DarkRed</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#8B0000</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(139, 0, 0)</h4>
+              </td>
+            </tr>
+        </tbody></table>
+      </section>
+      <section id="pink">
+        <table>
+          <tbody><tr class="head">
+            <th><h5>Pink HTML Color Names</h5></th>
+          </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FFC0CB;" data-hex="#FFC0CB" data-rgb="255, 192, 203" data-hsl="350, 100%, 88%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Pink</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FFC0CB</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 192, 203)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FFB6C1;" data-hex="#FFB6C1" data-rgb="255, 182, 193" data-hsl="351, 100%, 86%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">LightPink</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FFB6C1</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 182, 193)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FF69B4;" data-hex="#FF69B4" data-rgb="255, 105, 180" data-hsl="330, 100%, 71%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">HotPink</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FF69B4</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 105, 180)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FF1493;" data-hex="#FF1493" data-rgb="255, 20, 147" data-hsl="328, 100%, 54%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">DeepPink</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FF1493</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 20, 147)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#C71585;" data-hex="#C71585" data-rgb="199, 21, 133" data-hsl="322, 81%, 43%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">MediumVioletRed</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#C71585</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(199, 21, 133)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#DB7093;" data-hex="#DB7093" data-rgb="219, 112, 147" data-hsl="340, 60%, 65%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">PaleVioletRed</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#DB7093</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(219, 112, 147)</h4>
+              </td>
+            </tr>
+        </tbody></table>
+      </section>
+      <section id="orange">
+        <table>
+          <tbody><tr class="head">
+            <th><h5>Orange HTML Color Names</h5></th>
+          </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FFA07A;" data-hex="#FFA07A" data-rgb="255, 160, 122" data-hsl="17, 100%, 74%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">LightSalmon</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FFA07A</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 160, 122)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FF7F50;" data-hex="#FF7F50" data-rgb="255, 127, 80" data-hsl="16, 100%, 66%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Coral</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FF7F50</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 127, 80)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FF6347;" data-hex="#FF6347" data-rgb="255, 99, 71" data-hsl="9, 100%, 64%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Tomato</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FF6347</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 99, 71)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FF4500;" data-hex="#FF4500" data-rgb="255, 69, 0" data-hsl="16, 100%, 50%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">OrangeRed</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FF4500</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 69, 0)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FF8C00;" data-hex="#FF8C00" data-rgb="255, 140, 0" data-hsl="33, 100%, 50%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">DarkOrange</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FF8C00</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 140, 0)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FFA500;" data-hex="#FFA500" data-rgb="255, 165, 0" data-hsl="39, 100%, 50%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Orange</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FFA500</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 165, 0)</h4>
+              </td>
+            </tr>
+        </tbody></table>
+      </section>
+      <section id="yellow">
+        <table>
+          <tbody><tr class="head">
+            <th><h5>Yellow HTML Color Names</h5></th>
+          </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FFD700;" data-hex="#FFD700" data-rgb="255, 215, 0" data-hsl="51, 100%, 50%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Gold</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FFD700</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 215, 0)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FFFF00;" data-hex="#FFFF00" data-rgb="255, 255, 0" data-hsl="60, 100%, 50%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Yellow</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FFFF00</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 255, 0)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FFFFE0;" data-hex="#FFFFE0" data-rgb="255, 255, 224" data-hsl="60, 100%, 94%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">LightYellow</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FFFFE0</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 255, 224)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FFFACD;" data-hex="#FFFACD" data-rgb="255, 250, 205" data-hsl="54, 100%, 90%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">LemonChiffon</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FFFACD</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 250, 205)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FAFAD2;" data-hex="#FAFAD2" data-rgb="250, 250, 210" data-hsl="60, 80%, 90%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">LightGoldenrodYellow</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FAFAD2</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(250, 250, 210)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FFEFD5;" data-hex="#FFEFD5" data-rgb="255, 239, 213" data-hsl="37, 100%, 92%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">PapayaWhip</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FFEFD5</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 239, 213)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FFE4B5;" data-hex="#FFE4B5" data-rgb="255, 228, 181" data-hsl="38, 100%, 85%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Moccasin</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FFE4B5</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 228, 181)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FFDAB9;" data-hex="#FFDAB9" data-rgb="255, 218, 185" data-hsl="28, 100%, 86%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">PeachPuff</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FFDAB9</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 218, 185)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#EEE8AA;" data-hex="#EEE8AA" data-rgb="238, 232, 170" data-hsl="55, 67%, 80%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">PaleGoldenrod</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#EEE8AA</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(238, 232, 170)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#F0E68C;" data-hex="#F0E68C" data-rgb="240, 230, 140" data-hsl="54, 77%, 75%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Khaki</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#F0E68C</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(240, 230, 140)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#BDB76B;" data-hex="#BDB76B" data-rgb="189, 183, 107" data-hsl="56, 38%, 58%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">DarkKhaki</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#BDB76B</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(189, 183, 107)</h4>
+              </td>
+            </tr>
+        </tbody></table>
+      </section>
+      <section id="purple">
+        <table>
+          <tbody><tr class="head">
+            <th><h5>Purple HTML Color Names</h5></th>
+          </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#E6E6FA;" data-hex="#E6E6FA" data-rgb="230, 230, 250" data-hsl="240, 67%, 94%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Lavender</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#E6E6FA</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(230, 230, 250)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#D8BFD8;" data-hex="#D8BFD8" data-rgb="216, 191, 216" data-hsl="300, 24%, 80%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Thistle</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#D8BFD8</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(216, 191, 216)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#DDA0DD;" data-hex="#DDA0DD" data-rgb="221, 160, 221" data-hsl="300, 47%, 75%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Plum</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#DDA0DD</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(221, 160, 221)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#EE82EE;" data-hex="#EE82EE" data-rgb="238, 130, 238" data-hsl="300, 76%, 72%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Violet</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#EE82EE</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(238, 130, 238)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#DA70D6;" data-hex="#DA70D6" data-rgb="218, 112, 214" data-hsl="302, 59%, 65%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Orchid</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#DA70D6</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(218, 112, 214)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FF00FF;" data-hex="#FF00FF" data-rgb="255, 0, 255" data-hsl="300, 100%, 50%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Fuchsia</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FF00FF</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 0, 255)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FF00FF;" data-hex="#FF00FF" data-rgb="255, 0, 255" data-hsl="300, 100%, 50%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Magenta</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FF00FF</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 0, 255)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#BA55D3;" data-hex="#BA55D3" data-rgb="186, 85, 211" data-hsl="288, 59%, 58%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">MediumOrchid</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#BA55D3</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(186, 85, 211)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#9370DB;" data-hex="#9370DB" data-rgb="147, 112, 219" data-hsl="260, 60%, 65%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">MediumPurple</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#9370DB</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(147, 112, 219)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#663399;" data-hex="#663399" data-rgb="102, 51, 153" data-hsl="270, 50%, 40%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">RebeccaPurple</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#663399</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(102, 51, 153)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#8A2BE2;" data-hex="#8A2BE2" data-rgb="138, 43, 226" data-hsl="271, 76%, 53%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">BlueViolet</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#8A2BE2</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(138, 43, 226)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#9400D3;" data-hex="#9400D3" data-rgb="148, 0, 211" data-hsl="282, 100%, 41%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">DarkViolet</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#9400D3</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(148, 0, 211)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#9932CC;" data-hex="#9932CC" data-rgb="153, 50, 204" data-hsl="280, 61%, 50%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">DarkOrchid</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#9932CC</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(153, 50, 204)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#8B008B;" data-hex="#8B008B" data-rgb="139, 0, 139" data-hsl="300, 100%, 27%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">DarkMagenta</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#8B008B</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(139, 0, 139)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#800080;" data-hex="#800080" data-rgb="128, 0, 128" data-hsl="300, 100%, 25%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Purple</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#800080</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(128, 0, 128)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#4B0082;" data-hex="#4B0082" data-rgb="75, 0, 130" data-hsl="275, 100%, 25%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Indigo</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#4B0082</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(75, 0, 130)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#6A5ACD;" data-hex="#6A5ACD" data-rgb="106, 90, 205" data-hsl="248, 53%, 58%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">SlateBlue</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#6A5ACD</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(106, 90, 205)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#483D8B;" data-hex="#483D8B" data-rgb="72, 61, 139" data-hsl="248, 39%, 39%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">DarkSlateBlue</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#483D8B</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(72, 61, 139)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#7B68EE;" data-hex="#7B68EE" data-rgb="123, 104, 238" data-hsl="249, 80%, 67%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">MediumSlateBlue</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#7B68EE</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(123, 104, 238)</h4>
+              </td>
+            </tr>
+        </tbody></table>
+      </section>
+      <section id="green">
+        <table>
+          <tbody><tr class="head">
+            <th><h5>Green HTML Color Names</h5></th>
+          </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#ADFF2F;" data-hex="#ADFF2F" data-rgb="173, 255, 47" data-hsl="84, 100%, 59%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">GreenYellow</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#ADFF2F</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(173, 255, 47)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#7FFF00;" data-hex="#7FFF00" data-rgb="127, 255, 0" data-hsl="90, 100%, 50%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Chartreuse</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#7FFF00</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(127, 255, 0)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#7CFC00;" data-hex="#7CFC00" data-rgb="124, 252, 0" data-hsl="90, 100%, 49%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">LawnGreen</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#7CFC00</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(124, 252, 0)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#00FF00;" data-hex="#00FF00" data-rgb="0, 255, 0" data-hsl="120, 100%, 50%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Lime</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#00FF00</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(0, 255, 0)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#32CD32;" data-hex="#32CD32" data-rgb="50, 205, 50" data-hsl="120, 61%, 50%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">LimeGreen</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#32CD32</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(50, 205, 50)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#98FB98;" data-hex="#98FB98" data-rgb="152, 251, 152" data-hsl="120, 93%, 79%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">PaleGreen</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#98FB98</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(152, 251, 152)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#90EE90;" data-hex="#90EE90" data-rgb="144, 238, 144" data-hsl="120, 73%, 75%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">LightGreen</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#90EE90</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(144, 238, 144)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#00FA9A;" data-hex="#00FA9A" data-rgb="0, 250, 154" data-hsl="157, 100%, 49%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">MediumSpringGreen</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#00FA9A</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(0, 250, 154)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#00FF7F;" data-hex="#00FF7F" data-rgb="0, 255, 127" data-hsl="150, 100%, 50%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">SpringGreen</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#00FF7F</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(0, 255, 127)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#3CB371;" data-hex="#3CB371" data-rgb="60, 179, 113" data-hsl="147, 50%, 47%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">MediumSeaGreen</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#3CB371</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(60, 179, 113)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#2E8B57;" data-hex="#2E8B57" data-rgb="46, 139, 87" data-hsl="146, 50%, 36%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">SeaGreen</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#2E8B57</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(46, 139, 87)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#228B22;" data-hex="#228B22" data-rgb="34, 139, 34" data-hsl="120, 61%, 34%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">ForestGreen</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#228B22</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(34, 139, 34)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#008000;" data-hex="#008000" data-rgb="0, 128, 0" data-hsl="120, 100%, 25%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Green</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#008000</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(0, 128, 0)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#006400;" data-hex="#006400" data-rgb="0, 100, 0" data-hsl="120, 100%, 20%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">DarkGreen</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#006400</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(0, 100, 0)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#9ACD32;" data-hex="#9ACD32" data-rgb="154, 205, 50" data-hsl="80, 61%, 50%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">YellowGreen</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#9ACD32</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(154, 205, 50)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#6B8E23;" data-hex="#6B8E23" data-rgb="107, 142, 35" data-hsl="80, 60%, 35%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">OliveDrab</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#6B8E23</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(107, 142, 35)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#808000;" data-hex="#808000" data-rgb="128, 128, 0" data-hsl="60, 100%, 25%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Olive</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#808000</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(128, 128, 0)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#556B2F;" data-hex="#556B2F" data-rgb="85, 107, 47" data-hsl="82, 39%, 30%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">DarkOliveGreen</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#556B2F</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(85, 107, 47)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#66CDAA;" data-hex="#66CDAA" data-rgb="102, 205, 170" data-hsl="160, 51%, 60%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">MediumAquamarine</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#66CDAA</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(102, 205, 170)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#8FBC8B;" data-hex="#8FBC8B" data-rgb="143, 188, 139" data-hsl="115, 27%, 64%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">DarkSeaGreen</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#8FBC8B</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(143, 188, 139)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#20B2AA;" data-hex="#20B2AA" data-rgb="32, 178, 170" data-hsl="177, 70%, 41%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">LightSeaGreen</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#20B2AA</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(32, 178, 170)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#008B8B;" data-hex="#008B8B" data-rgb="0, 139, 139" data-hsl="180, 100%, 27%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">DarkCyan</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#008B8B</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(0, 139, 139)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#008080;" data-hex="#008080" data-rgb="0, 128, 128" data-hsl="180, 100%, 25%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Teal</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#008080</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(0, 128, 128)</h4>
+              </td>
+            </tr>
+        </tbody></table>
+      </section>
+      <section id="blue">
+        <table>
+          <tbody><tr class="head">
+            <th><h5>Blue HTML Color Names</h5></th>
+          </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#00FFFF;" data-hex="#00FFFF" data-rgb="0, 255, 255" data-hsl="180, 100%, 50%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Aqua</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#00FFFF</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(0, 255, 255)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#00FFFF;" data-hex="#00FFFF" data-rgb="0, 255, 255" data-hsl="180, 100%, 50%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Cyan</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#00FFFF</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(0, 255, 255)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#E0FFFF;" data-hex="#E0FFFF" data-rgb="224, 255, 255" data-hsl="180, 100%, 94%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">LightCyan</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#E0FFFF</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(224, 255, 255)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#AFEEEE;" data-hex="#AFEEEE" data-rgb="175, 238, 238" data-hsl="180, 65%, 81%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">PaleTurquoise</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#AFEEEE</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(175, 238, 238)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#7FFFD4;" data-hex="#7FFFD4" data-rgb="127, 255, 212" data-hsl="160, 100%, 75%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Aquamarine</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#7FFFD4</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(127, 255, 212)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#40E0D0;" data-hex="#40E0D0" data-rgb="64, 224, 208" data-hsl="174, 72%, 56%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Turquoise</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#40E0D0</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(64, 224, 208)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#48D1CC;" data-hex="#48D1CC" data-rgb="72, 209, 204" data-hsl="178, 60%, 55%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">MediumTurquoise</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#48D1CC</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(72, 209, 204)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#00CED1;" data-hex="#00CED1" data-rgb="0, 206, 209" data-hsl="181, 100%, 41%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">DarkTurquoise</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#00CED1</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(0, 206, 209)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#5F9EA0;" data-hex="#5F9EA0" data-rgb="95, 158, 160" data-hsl="182, 25%, 50%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">CadetBlue</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#5F9EA0</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(95, 158, 160)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#4682B4;" data-hex="#4682B4" data-rgb="70, 130, 180" data-hsl="207, 44%, 49%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">SteelBlue</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#4682B4</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(70, 130, 180)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#B0C4DE;" data-hex="#B0C4DE" data-rgb="176, 196, 222" data-hsl="214, 41%, 78%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">LightSteelBlue</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#B0C4DE</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(176, 196, 222)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#B0E0E6;" data-hex="#B0E0E6" data-rgb="176, 224, 230" data-hsl="187, 52%, 80%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">PowderBlue</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#B0E0E6</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(176, 224, 230)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#ADD8E6;" data-hex="#ADD8E6" data-rgb="173, 216, 230" data-hsl="195, 53%, 79%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">LightBlue</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#ADD8E6</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(173, 216, 230)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#87CEEB;" data-hex="#87CEEB" data-rgb="135, 206, 235" data-hsl="197, 71%, 73%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">SkyBlue</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#87CEEB</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(135, 206, 235)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#87CEFA;" data-hex="#87CEFA" data-rgb="135, 206, 250" data-hsl="203, 92%, 75%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">LightSkyBlue</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#87CEFA</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(135, 206, 250)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#00BFFF;" data-hex="#00BFFF" data-rgb="0, 191, 255" data-hsl="195, 100%, 50%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">DeepSkyBlue</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#00BFFF</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(0, 191, 255)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#1E90FF;" data-hex="#1E90FF" data-rgb="30, 144, 255" data-hsl="210, 100%, 56%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">DodgerBlue</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#1E90FF</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(30, 144, 255)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#6495ED;" data-hex="#6495ED" data-rgb="100, 149, 237" data-hsl="219, 79%, 66%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">CornflowerBlue</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#6495ED</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(100, 149, 237)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#7B68EE;" data-hex="#7B68EE" data-rgb="123, 104, 238" data-hsl="249, 80%, 67%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">MediumSlateBlue</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#7B68EE</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(123, 104, 238)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#4169E1;" data-hex="#4169E1" data-rgb="65, 105, 225" data-hsl="225, 73%, 57%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">RoyalBlue</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#4169E1</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(65, 105, 225)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#0000FF;" data-hex="#0000FF" data-rgb="0, 0, 255" data-hsl="240, 100%, 50%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Blue</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#0000FF</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(0, 0, 255)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#0000CD;" data-hex="#0000CD" data-rgb="0, 0, 205" data-hsl="240, 100%, 40%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">MediumBlue</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#0000CD</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(0, 0, 205)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#00008B;" data-hex="#00008B" data-rgb="0, 0, 139" data-hsl="240, 100%, 27%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">DarkBlue</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#00008B</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(0, 0, 139)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#000080;" data-hex="#000080" data-rgb="0, 0, 128" data-hsl="240, 100%, 25%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Navy</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#000080</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(0, 0, 128)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#191970;" data-hex="#191970" data-rgb="25, 25, 112" data-hsl="240, 64%, 27%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">MidnightBlue</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#191970</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(25, 25, 112)</h4>
+              </td>
+            </tr>
+        </tbody></table>
+      </section>
+      <section id="brown">
+        <table>
+          <tbody><tr class="head">
+            <th><h5>Brown HTML Color Names</h5></th>
+          </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FFF8DC;" data-hex="#FFF8DC" data-rgb="255, 248, 220" data-hsl="48, 100%, 93%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Cornsilk</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FFF8DC</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 248, 220)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FFEBCD;" data-hex="#FFEBCD" data-rgb="255, 235, 205" data-hsl="36, 100%, 90%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">BlanchedAlmond</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FFEBCD</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 235, 205)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FFE4C4;" data-hex="#FFE4C4" data-rgb="255, 228, 196" data-hsl="33, 100%, 88%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Bisque</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FFE4C4</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 228, 196)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FFDEAD;" data-hex="#FFDEAD" data-rgb="255, 222, 173" data-hsl="36, 100%, 84%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">NavajoWhite</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FFDEAD</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 222, 173)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#F5DEB3;" data-hex="#F5DEB3" data-rgb="245, 222, 179" data-hsl="39, 77%, 83%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Wheat</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#F5DEB3</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(245, 222, 179)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#DEB887;" data-hex="#DEB887" data-rgb="222, 184, 135" data-hsl="34, 57%, 70%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">BurlyWood</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#DEB887</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(222, 184, 135)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#D2B48C;" data-hex="#D2B48C" data-rgb="210, 180, 140" data-hsl="34, 44%, 69%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Tan</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#D2B48C</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(210, 180, 140)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#BC8F8F;" data-hex="#BC8F8F" data-rgb="188, 143, 143" data-hsl="0, 25%, 65%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">RosyBrown</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#BC8F8F</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(188, 143, 143)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#F4A460;" data-hex="#F4A460" data-rgb="244, 164, 96" data-hsl="28, 87%, 67%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">SandyBrown</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#F4A460</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(244, 164, 96)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#DAA520;" data-hex="#DAA520" data-rgb="218, 165, 32" data-hsl="43, 74%, 49%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Goldenrod</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#DAA520</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(218, 165, 32)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#B8860B;" data-hex="#B8860B" data-rgb="184, 134, 11" data-hsl="43, 89%, 38%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">DarkGoldenrod</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#B8860B</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(184, 134, 11)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#CD853F;" data-hex="#CD853F" data-rgb="205, 133, 63" data-hsl="30, 59%, 53%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Peru</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#CD853F</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(205, 133, 63)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#D2691E;" data-hex="#D2691E" data-rgb="210, 105, 30" data-hsl="25, 75%, 47%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Chocolate</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#D2691E</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(210, 105, 30)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#8B4513;" data-hex="#8B4513" data-rgb="139, 69, 19" data-hsl="25, 76%, 31%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">SaddleBrown</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#8B4513</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(139, 69, 19)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#A0522D;" data-hex="#A0522D" data-rgb="160, 82, 45" data-hsl="19, 56%, 40%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Sienna</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#A0522D</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(160, 82, 45)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#A52A2A;" data-hex="#A52A2A" data-rgb="165, 42, 42" data-hsl="0, 59%, 41%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Brown</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#A52A2A</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(165, 42, 42)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#800000;" data-hex="#800000" data-rgb="128, 0, 0" data-hsl="0, 100%, 25%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Maroon</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#800000</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(128, 0, 0)</h4>
+              </td>
+            </tr>
+        </tbody></table>
+      </section>
+      <section id="white">
+        <table>
+          <tbody><tr class="head">
+            <th><h5>White HTML Color Names</h5></th>
+          </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FFFFFF;" data-hex="#FFFFFF" data-rgb="255, 255, 255" data-hsl="0, 0%, 100%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">White</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FFFFFF</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 255, 255)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FFFAFA;" data-hex="#FFFAFA" data-rgb="255, 250, 250" data-hsl="0, 100%, 99%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Snow</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FFFAFA</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 250, 250)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#F0FFF0;" data-hex="#F0FFF0" data-rgb="240, 255, 240" data-hsl="120, 100%, 97%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">HoneyDew</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#F0FFF0</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(240, 255, 240)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#F5FFFA;" data-hex="#F5FFFA" data-rgb="245, 255, 250" data-hsl="150, 100%, 98%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">MintCream</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#F5FFFA</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(245, 255, 250)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#F0FFFF;" data-hex="#F0FFFF" data-rgb="240, 255, 255" data-hsl="180, 100%, 97%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Azure</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#F0FFFF</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(240, 255, 255)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#F0F8FF;" data-hex="#F0F8FF" data-rgb="240, 248, 255" data-hsl="208, 100%, 97%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">AliceBlue</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#F0F8FF</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(240, 248, 255)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#F8F8FF;" data-hex="#F8F8FF" data-rgb="248, 248, 255" data-hsl="240, 100%, 99%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">GhostWhite</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#F8F8FF</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(248, 248, 255)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#F5F5F5;" data-hex="#F5F5F5" data-rgb="245, 245, 245" data-hsl="0, 0%, 96%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">WhiteSmoke</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#F5F5F5</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(245, 245, 245)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FFF5EE;" data-hex="#FFF5EE" data-rgb="255, 245, 238" data-hsl="25, 100%, 97%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">SeaShell</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FFF5EE</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 245, 238)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#F5F5DC;" data-hex="#F5F5DC" data-rgb="245, 245, 220" data-hsl="60, 56%, 91%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Beige</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#F5F5DC</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(245, 245, 220)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FDF5E6;" data-hex="#FDF5E6" data-rgb="253, 245, 230" data-hsl="39, 85%, 95%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">OldLace</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FDF5E6</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(253, 245, 230)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FFFAF0;" data-hex="#FFFAF0" data-rgb="255, 250, 240" data-hsl="40, 100%, 97%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">FloralWhite</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FFFAF0</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 250, 240)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FFFFF0;" data-hex="#FFFFF0" data-rgb="255, 255, 240" data-hsl="60, 100%, 97%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Ivory</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FFFFF0</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 255, 240)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FAEBD7;" data-hex="#FAEBD7" data-rgb="250, 235, 215" data-hsl="34, 78%, 91%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">AntiqueWhite</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FAEBD7</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(250, 235, 215)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FAF0E6;" data-hex="#FAF0E6" data-rgb="250, 240, 230" data-hsl="30, 67%, 94%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Linen</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FAF0E6</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(250, 240, 230)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FFF0F5;" data-hex="#FFF0F5" data-rgb="255, 240, 245" data-hsl="340, 100%, 97%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">LavenderBlush</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FFF0F5</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 240, 245)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#FFE4E1;" data-hex="#FFE4E1" data-rgb="255, 228, 225" data-hsl="6, 100%, 94%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">MistyRose</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#FFE4E1</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(255, 228, 225)</h4>
+              </td>
+            </tr>
+        </tbody></table>
+      </section>
+      <section id="gray">
+        <table>
+          <tbody><tr class="head">
+            <th><h5>Gray HTML Color Names</h5></th>
+          </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#DCDCDC;" data-hex="#DCDCDC" data-rgb="220, 220, 220" data-hsl="0, 0%, 86%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Gainsboro</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#DCDCDC</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(220, 220, 220)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#D3D3D3;" data-hex="#D3D3D3" data-rgb="211, 211, 211" data-hsl="0, 0%, 83%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">LightGray</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#D3D3D3</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(211, 211, 211)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#C0C0C0;" data-hex="#C0C0C0" data-rgb="192, 192, 192" data-hsl="0, 0%, 75%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Silver</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#C0C0C0</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(192, 192, 192)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#A9A9A9;" data-hex="#A9A9A9" data-rgb="169, 169, 169" data-hsl="0, 0%, 66%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">DarkGray</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#A9A9A9</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(169, 169, 169)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#808080;" data-hex="#808080" data-rgb="128, 128, 128" data-hsl="0, 0%, 50%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Gray</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#808080</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(128, 128, 128)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#696969;" data-hex="#696969" data-rgb="105, 105, 105" data-hsl="0, 0%, 41%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">DimGray</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#696969</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(105, 105, 105)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#778899;" data-hex="#778899" data-rgb="119, 136, 153" data-hsl="210, 14%, 53%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">LightSlateGray</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#778899</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(119, 136, 153)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#708090;" data-hex="#708090" data-rgb="112, 128, 144" data-hsl="210, 13%, 50%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">SlateGray</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#708090</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(112, 128, 144)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#2F4F4F;" data-hex="#2F4F4F" data-rgb="47, 79, 79" data-hsl="180, 25%, 25%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">DarkSlateGray</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#2F4F4F</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(47, 79, 79)</h4>
+              </td>
+            </tr>
+            <tr class="color">
+              <td class="color-swatch" title="Click to add to your palette">
+                <div class="js-color" style="background-color:#000000;" data-hex="#000000" data-rgb="0, 0, 0" data-hsl="0, 0%, 0%"></div>
+              </td>
+              <td class="color-name">
+                <h4 title="HTML color name">Black</h4>
+              </td>
+              <td class="color-hex selectable">
+                <h4 class="Hex_color_code">#000000</h4>
+              </td>
+              <td class="color-rgb selectable">
+                <h4 title="RGB color code">rgb(0, 0, 0)</h4>
+              </td>
+            </tr>
+        </tbody></table>
+      </section>
+      
+  </div>
+
+</body>
+</html>

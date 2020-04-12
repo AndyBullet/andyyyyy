@@ -1,0 +1,59 @@
+<!DOCTYPE html> 
+<html> 
+  
+<head> 
+    <title>How to insert HTML content  
+      into an iFrame using jQuery?</title> 
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"> 
+  </script> 
+    <style type="text/css"> 
+        textarea, iframe { 
+            display: block; 
+            margin: 10px 0; 
+        } 
+          
+        iframe { 
+            width: 500px; 
+            height: 500px;
+            border: 1px solid #000000; 
+        } 
+    </style> 
+</head> 
+  
+<body> 
+    <center> 
+        <h1 style="color:green;">  
+        GeeksForGeeks  
+    </h1> 
+        <h3> 
+          How to insert HTML content into an iFrame using jQuery 
+      </h3> 
+        <textarea rows="2" cols="40" style="text-align:center;"> 
+          This text will appear into the input of iframe
+      </textarea> 
+        <button type="button" onclick="updateIframe()"> 
+          Click to Insert 
+      </button> 
+        <iframe src="http://www.e-chat.co/room/create" style="text-align:center;" id="myframe"></iframe> 
+        <script type="text/javascript"> 
+            function updateIframe() { 
+                var myFrame = $("#myframe").contents().find('#CreateChatroomInputName'); 
+                var textareaValue = $("textarea").val(); 
+                myFrame.html(textareaValue); 
+            } 
+            </script>
+        <!-- <button type="button" onclick="updateIframe()"> 
+          Click to Insert 
+        </button> 
+        <iframe src="http://www.e-chat.co/" style="text-align:center;" id="myframe"></iframe> 
+        <script type="text/javascript"> 
+            function updateIframe() { 
+                var iframe = document.getElementById("myFrame");
+                var elmnt = iframe.contentWindow.document.getElementsByTagName("img")[0];
+                elmnt.style.display = "none";
+            } 
+            </script> -->
+    </center>
+</body> 
+  
+</html> 

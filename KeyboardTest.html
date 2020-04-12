@@ -1,0 +1,721 @@
+<form id="keyboard" style="z-index: 2; position: absolute; top:75px; left:190px;" name="calculator">
+    
+    <div style="z-index: 2; width: 400px; height: 250px;">
+  
+        <img style="z-index: 2; position: absolute;" src="/Writing machine/Storto.png" id="storto" style="z-index: 3; position: absolute; top: 26px; width: 30px; height: 40px;">
+        <img style="z-index: 1; position: absolute; left: 35px; top: 200px; width: 300px; height: 70px;" src="Writing machine/coso di sotto.png">
+        <img style="z-index: 1; position: absolute; left: -43px; top: 1px; width: 420px; height: 50px;" src="Writing machine/rullo.png">
+  
+        <img style="z-index: 1; position: absolute; top: 47px; left: -50px; width: 50px; height: 45px;" src="Writing machine/cosi.png">
+        <img style="z-index: 1; position: absolute; top: 47px; left: 360px; width: 50px; height: 45px;" src="Writing machine/cosi.png">
+  
+        <table style="margin-top:20px; position: relative;">
+          <tr>
+            <input name="displayresult" id="display" style="width: 300px; z-index: 2; position: absolute; top:10px; left: 10px;" class="cal-input" disabled>
+          </tr>
+        </table>
+        <table border="0px" cellspacing="10px" style="margin-top:5px;">
+  
+          <tr>
+            <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" id="1" value="1" class="cal-number">1</td>
+            <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" id="2" value="2" class="cal-number">2</td>
+            <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" id="3" value="3" class="cal-number">3</td>
+            <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" id="4" value="4" class="cal-number">4</td>
+            <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" id="5" value="5" class="cal-number">5</td>
+            <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" id="6" value="6" class="cal-number">6</td>
+            <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" id="7" id="7" value="7" class="cal-number">7</td>
+            <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" id="8" id="8" value="8" class="cal-number">8</td>
+            <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" id="9" value="9" class="cal-number">9</td>
+            <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" id="0" value="0" class="cal-number">0</td>
+        </tr>
+  
+      <tr>
+        <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)}; charactersNumber = charactersNumber + 1; console.log(charactersNumber);" class="td" id="q" value="q" class="cal-top">q</td>
+        <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" id="w" value="w" class="cal-top">w</td>
+        <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" class="operator cal-top" id="e" value="e">e</td>
+        <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" id="r" value="r" class="cal-top">r</td>
+        <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" id="t" value="t" class="cal-top">t</td>
+        <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" class="operator cal-top" id="y" value="y">y</td>
+        <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" class="operator cal-top" id="u" value="e">u</td>
+        <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" id="i" value="r" class="cal-top">i</td>
+        <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" id="o" value="t" class="cal-top">o</td>
+        <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" class="operator cal-top" id="p" value="y">p</td>
+        <td onclick="if(charactersNumber > 0){if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)}};" class="td" id="clear" name="clear" value="c" class=" cal-top"> ← </td>
+      </tr>
+      
+      <tr>
+        <td style="border: transparent; background: transparent;"></td>
+        <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" id="a" value="q" class="cal-top">a</td>
+        <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" id="s" value="w" class="cal-top">s</td>
+        <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" class="operator cal-top" id="d" value="e">d</td>
+        <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" id="f" value="r" class="cal-top">f</td>
+        <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" id="g" value="t" class="cal-top">g</td>
+        <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" class="operator cal-top" id="h" value="y">h</td>
+        <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" class="operator cal-top" id="j" value="e">j</td>
+        <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" id="k" value="r" class="cal-top">k</td>
+        <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" id="l" value="t" class="cal-top">l</td>
+      </tr>
+  
+      <tr>
+        <td style="border: transparent; background: transparent;"></td>
+        <td style="border: transparent; background: transparent;"></td>
+        <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" id="z" value="q" class="cal-top">z</td>
+        <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" id="x" value="w" class="cal-top">x</td>
+        <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" class="operator cal-top" id="c" value="e">c</td>
+        <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" id="v" value="r" class="cal-top">v</td>
+        <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" id="b" value="t" class="cal-top">b</td>
+        <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" class="operator cal-top" id="n" value="y">n</td>
+        <td onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" class="operator cal-top" id="m" value="e">m</td>
+      </tr>
+        <div style="z-index: 2;" onclick="if(charactersNumber <= 12){$(document).ready(function(){$('#storto').attr('src', '/Writing machine/writer.png');}); document.getElementById('storto').style.top = 15 + 'px'; setTimeout(() => {document.getElementById('storto').style.top = 26 + 'px'; $(document).ready(function(){$('#storto').attr('src', '/Writing machine/Storto.png');});}, 250)};" class="td" class="operator cal-top" id="space" value=" "></div>
+  
+          <script src="macchinaDaScrivere.js"></script>
+          
+        </table>
+      </div>
+    </form>
+  
+  <!--
+  let Numberr = null;
+  let buttonForWrittingMachine = null;
+  var writeNumber = 8;
+  
+  function move(){
+      let interval = setInterval(() => {
+          Numberr = Numberr + 5;
+          var down = Numberr + "px";
+          buttonForWrittingMachine.style.top = down;
+          setTimeout(() => {
+              clearInterval(interval);
+              var interval2 = setInterval(() => {
+                  Numberr = Numberr - 5;
+                  down = Numberr + "px";
+                  buttonForWrittingMachine.style.top = down;
+                  setTimeout(() => {
+                      clearInterval(interval2);
+                          }, 20);
+                  }, 45);
+          }, 50);
+    }, 50);
+  }
+  
+  /*
+  function move(){
+      let interval = setInterval(() => {
+          Numberr = Numberr + 5;
+          down = Numberr + "px";
+          buttonForWrittingMachine.style.top = down;
+          if (Numberr == 10){
+  
+              clearInterval(interval);
+              var interval2 = setInterval(() => {
+                  Numberr = Numberr - 5;
+                  down = Numberr + "px";
+                  buttonForWrittingMachine.style.top = down;
+                  if (Numberr == 0){
+                      clearInterval(interval2);
+                      }
+                  }, 100);
+          }
+    }, 100);
+  }
+  
+  */
+  
+  /*
+  function showPosition() {
+      var div = document.getElementById("d");
+      var rect = div.getBoundingClientRect();
+      x = rect.left;
+      y = rect.top;
+      w = rect.width;
+      h = rect.height;
+      alert ("Left: " + x + ", Top: " + y + ", Width: " + w + ", Height: " + h);
+      var left = document.getElementById('d').style.left;
+      var top = document.getElementById('d').style.top;
+      console.log(left, top);
+    }
+  */
+  var charactersNumber = 0;
+  document.getElementById('1').addEventListener('click', event => {
+      move();
+      if(charactersNumber <= 12){
+      buttonForWrittingMachine = document.getElementById('1');
+      calculator.display.value += '1';
+      /*setTimeout(() => {
+          buttonForWrittingMachine = document.getElementById("null");
+      }, 50);*/
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+              }, 1);
+          }
+  });
+  
+  document.getElementById('2').addEventListener('click', event => {
+      move();
+      if(charactersNumber <= 12){
+      buttonForWrittingMachine = document.getElementById('2');
+      calculator.display.value += '2';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+      }
+  });
+  
+  document.getElementById('3').addEventListener('click', event => {
+      move();
+      if(charactersNumber <= 12){
+      buttonForWrittingMachine = document.getElementById('3');
+      calculator.display.value += '3';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+      }
+  });
+  
+  document.getElementById('4').addEventListener('click', event => {
+      move();
+      if(charactersNumber <= 12){
+      buttonForWrittingMachine = document.getElementById('4');    
+      calculator.display.value += '4';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+      }
+  });
+  
+  document.getElementById('5').addEventListener('click', event => {
+      move();
+      if(charactersNumber <= 12){
+      buttonForWrittingMachine = document.getElementById('5');    
+      calculator.display.value += '5';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+      }
+  });
+  
+  document.getElementById('6').addEventListener('click', event => {
+      move();
+      if(charactersNumber <= 12){
+      buttonForWrittingMachine = document.getElementById('6');    
+      calculator.display.value += '6';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+      }
+  });
+  
+  document.getElementById('7').addEventListener('click', event => {
+      move();
+      if(charactersNumber <= 12){
+      buttonForWrittingMachine = document.getElementById('7');
+      calculator.display.value += '7';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+      }
+  });
+  
+  document.getElementById('8').addEventListener('click', event => {
+      move();
+      if(charactersNumber <= 12){
+      buttonForWrittingMachine = document.getElementById('8');   
+      calculator.display.value += '8';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+              console.log(charactersNumber);
+          }, 1);
+      }
+  });
+  
+  document.getElementById('9').addEventListener('click', event => {
+      move();
+      if(charactersNumber <= 12){
+      buttonForWrittingMachine = document.getElementById('9');
+      calculator.display.value += '9';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+      }
+  });
+  
+  document.getElementById('0').addEventListener('click', event => {
+      move();
+      if(charactersNumber <= 12){
+      buttonForWrittingMachine = document.getElementById('0');
+      calculator.display.value += '0';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+      }
+  });
+  
+  document.getElementById('clear').addEventListener('click', event => {
+      move();
+      if(charactersNumber <= 12){
+      buttonForWrittingMachine = document.getElementById('clear');    
+      str = calculator.display.value.slice(0, -1);
+      calculator.display.value = str;
+      if(charactersNumber > 1){
+          writeNumber = writeNumber - 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+              }
+          setTimeout(() => {
+              charactersNumber = charactersNumber - 1;
+              console.log(charactersNumber);
+          }, 25);
+  }
+      else if(charactersNumber == 1){
+          writeNumber = 8;
+          setTimeout(() => {
+              charactersNumber = charactersNumber - 1;
+              console.log(charactersNumber);
+          }, 1);
+      }
+  });
+  
+  
+  document.getElementById('q').addEventListener('click', event => {
+      // showPosition()
+      // Numberr = document.getElementById('q').style.top;
+      move();
+      if(charactersNumber <= 12){
+      buttonForWrittingMachine = document.getElementById('q');
+      calculator.display.value += 'q';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+      }
+  });
+  
+  document.getElementById('w').addEventListener('click', event => {
+      buttonForWrittingMachine = document.getElementById('w');
+      move();
+      calculator.display.value += 'w';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+  });
+  
+  document.getElementById('e').addEventListener('click', event => {
+      buttonForWrittingMachine = document.getElementById('e');
+      move();
+      calculator.display.value += 'e';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+  });
+  
+  document.getElementById('r').addEventListener('click', event => {
+      buttonForWrittingMachine = document.getElementById('r');
+      move();
+      calculator.display.value += 'r';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+  });
+  
+  document.getElementById('t').addEventListener('click', event => {
+      buttonForWrittingMachine = document.getElementById('t');
+      move();
+      calculator.display.value += 't';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+  });
+  
+  document.getElementById('y').addEventListener('click', event => {
+      buttonForWrittingMachine = document.getElementById('y');
+      move();
+      calculator.display.value += 'y';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+  });
+  
+  document.getElementById('u').addEventListener('click', event => {
+      buttonForWrittingMachine = document.getElementById('u');
+      move();
+      calculator.display.value += 'u';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+  });
+  
+  document.getElementById('i').addEventListener('click', event => {
+      buttonForWrittingMachine = document.getElementById('i');
+      move();
+      calculator.display.value += 'i';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+  });
+  
+  document.getElementById('o').addEventListener('click', event => {
+      buttonForWrittingMachine = document.getElementById('o');
+      move();
+      calculator.display.value += 'o';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+  });
+  
+  document.getElementById('p').addEventListener('click', event => {
+      buttonForWrittingMachine = document.getElementById('p');
+      move();
+      calculator.display.value += 'p';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+  });
+  
+  document.getElementById('a').addEventListener('click', event => {
+      buttonForWrittingMachine = document.getElementById('a');
+      move();
+      calculator.display.value += 'a';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+  });
+  
+  document.getElementById('s').addEventListener('click', event => {
+      buttonForWrittingMachine = document.getElementById('s');
+      move();
+      calculator.display.value += 's';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+  });
+  
+  document.getElementById('d').addEventListener('click', event => {
+      buttonForWrittingMachine = document.getElementById('d');
+      move();
+      calculator.display.value += 'd';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+  });
+  
+  document.getElementById('f').addEventListener('click', event => {
+      buttonForWrittingMachine = document.getElementById('f');
+      move();
+      calculator.display.value += 'f';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+  });
+  
+  document.getElementById('g').addEventListener('click', event => {
+      buttonForWrittingMachine = document.getElementById('g');
+      move();
+      calculator.display.value += 'g';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+  });
+  
+  document.getElementById('h').addEventListener('click', event => {
+      buttonForWrittingMachine = document.getElementById('h');
+      move();
+      calculator.display.value += 'h';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+  });
+  
+  document.getElementById('j').addEventListener('click', event => {
+      buttonForWrittingMachine = document.getElementById('j');
+      move();
+      calculator.display.value += 'j';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+  });
+  
+  document.getElementById('k').addEventListener('click', event => {
+      buttonForWrittingMachine = document.getElementById('k');
+      move();
+      calculator.display.value += 'k';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+  });
+  
+  document.getElementById('l').addEventListener('click', event => {
+      buttonForWrittingMachine = document.getElementById('l');
+      move();
+      calculator.display.value += 'l';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+  });
+  
+  document.getElementById('z').addEventListener('click', event => {
+      buttonForWrittingMachine = document.getElementById('z');
+      move();
+      calculator.display.value += 'z';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+  });
+  
+  document.getElementById('x').addEventListener('click', event => {
+      buttonForWrittingMachine = document.getElementById('x');
+      move();
+      calculator.display.value += 'x';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+  });
+  
+  document.getElementById('c').addEventListener('click', event => {
+      buttonForWrittingMachine = document.getElementById('c');
+      move();
+      calculator.display.value += 'c';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+  });
+  
+  document.getElementById('v').addEventListener('click', event => {
+      buttonForWrittingMachine = document.getElementById('v');
+      move();
+      calculator.display.value += 'v';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+  });
+  
+  document.getElementById('b').addEventListener('click', event => {
+      buttonForWrittingMachine = document.getElementById('b');
+      move();
+      calculator.display.value += 'b';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+  });
+  
+  document.getElementById('n').addEventListener('click', event => {
+      buttonForWrittingMachine = document.getElementById('n');
+      move();
+      calculator.display.value += 'n';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+  });
+  
+  document.getElementById('m').addEventListener('click', event => {
+      buttonForWrittingMachine = document.getElementById('m');
+      move();
+      calculator.display.value += 'm';
+      if(charactersNumber >= 1){
+          writeNumber = writeNumber + 12;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+  });
+  
+  document.getElementById('space').addEventListener('click', event => {
+      var Numero = 170;
+      var interval = setInterval(() => {
+      Numero = Numero + 5;
+      down = Numero + "px";
+      document.getElementById('space').style.top = down;
+      if (Numero == 180){
+  
+      clearInterval(interval);
+      var interval2 = setInterval(() => {
+          Numero = Numero - 5;
+          down = Numero + "px";
+          document.getElementById('space').style.top = down;
+          if (Numero == 170){
+              clearInterval(interval2);
+              }
+          }, 100);
+            }
+        }, 100);
+        calculator.display.value += ' ';
+        if(charactersNumber >= 1){
+          writeNumber = writeNumber + 8;
+          document.getElementById('storto').style.left = writeNumber + "px";
+          console.log(charactersNumber);
+          }
+          setTimeout(() => {
+              charactersNumber = charactersNumber + 1;
+          }, 1);
+        });
+    -->

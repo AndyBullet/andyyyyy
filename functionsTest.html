@@ -1,0 +1,138 @@
+<!--DISEQUAL-->
+<script>
+var x = 'benzinaio';
+
+if (x != 'benzinaio'){
+    console.log("Non c'è un benzinaio")
+}
+else{
+    console.log("Il benzinaio è lì")
+}
+</script>
+
+<!--ANIMATION OF THE BUTTON OF THE KEYBOARD-->
+<!DOCTYPE html>
+<html>
+<style>
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#q {
+  top: 200px;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+
+#two{
+  top: 200px;
+  left: 200px;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+</style>
+<body>
+
+<button>Click Me</button>
+
+<form id="keyboard" style="z-index: 2; position: absolute; top:75px; left:190px;" name="calculator">
+    <div style="z-index: 2; width: 400px; height: 250px; border: 1px solid #D0CECE;">
+
+      <table style="margin-top:20px;">
+        <tr>
+          <input name="displayresult" id="display" style="width: 180px;z-index: 2; position: absolute; top:10px; left: 10px;" class="cal-input" placeholder="Inserisci il tuo nome utente..." disabled>
+        </tr>
+      </table>
+      <table border="0px" cellspacing="10px" style="margin-top:5px;">
+
+          <tr>
+              <td class="td" id="1" value="1" onclick="calculator.display.value += '1'" class="cal-number">1</td>
+              <td class="td" id="2" value="2" onclick="calculator.display.value += '2'" class="cal-number">2</td>
+              <td class="td" id="3" value="3" onclick="calculator.display.value += '3'" class="cal-number">3</td>
+              <td class="td" id="4" value="4" onclick="calculator.display.value += '4'" class="cal-number">4</td>
+              <td class="td" id="5" value="5" onclick="calculator.display.value += '5'" class="cal-number">5</td>
+              <td class="td" id="6" value="6" onclick="calculator.display.value += '6'" class="cal-number">6</td>
+              <td class="td" id="7" id="7" value="7" onclick="calculator.display.value += '7'" class="cal-number">7</td>
+              <td class="td" id="8" id="8" value="8" onclick="calculator.display.value += '8'" class="cal-number">8</td>
+              <td class="td" id="9" value="9" onclick="calculator.display.value += '9'" class="cal-number">9</td>
+              <td class="td" id="0" value="0" onclick="calculator.display.value += '0'" class="cal-number">0</td>
+              <td class="td" id="clear" name="clear" value="c" onclick="str = calculator.display.value.slice(0, -1); calculator.display.value = str" class=" cal-top"> ← </td>
+            </tr>
+
+        <tr>
+          <p class="td" id="q" value="q" onclick="calculator.display.value += 'q'" class="cal-top">q</p>
+          <td class="td" id="w" value="w" onclick="calculator.display.value += 'w'" class="cal-top">w</td>
+          <td class="td" class="operator cal-top" id="e" value="e" onclick="calculator.display.value += 'e'">e</td>
+          <td class="td" id="r" value="r" onclick="calculator.display.value += 'r'" class="cal-top">r</td>
+          <td class="td" id="t" value="t" onclick="calculator.display.value += 't'" class="cal-top">t</td>
+          <td class="td" class="operator cal-top" id="y" value="y" onclick="calculator.display.value += 'y'">y</td>
+          <td class="td" class="operator cal-top" id="u" value="e" onclick="calculator.display.value += 'u'">u</td>
+          <td class="td" id="i" value="r" onclick="calculator.display.value += 'i'" class="cal-top">i</td>
+          <td class="td" id="o" value="t" onclick="calculator.display.value += 'o'" class="cal-top">o</td>
+          <td class="td" class="operator cal-top" id="p" value="y" onclick="calculator.display.value += 'p'">p</td>
+        </tr>
+        
+        <tr>
+          <td style="border: transparent; background: transparent;"></td>
+          <td class="td" id="a" value="q" onclick="calculator.display.value += 'a'" class="cal-top">a</td>
+          <td class="td" id="s" value="w" onclick="calculator.display.value += 's'" class="cal-top">s</td>
+          <td class="td" class="operator cal-top" id="d" value="e" onclick="calculator.display.value += 'd'">d</td>
+          <td class="td" id="f" value="r" onclick="calculator.display.value += 'f'" class="cal-top">f</td>
+          <td class="td" id="g" value="t" onclick="calculator.display.value += 'g'" class="cal-top">g</td>
+          <td class="td" class="operator cal-top" id="h" value="y" onclick="calculator.display.value += 'h'">h</td>
+          <td class="td" class="operator cal-top" id="j" value="e" onclick="calculator.display.value += 'j'">j</td>
+          <td class="td" id="k" value="r" onclick="calculator.display.value += 'k'" class="cal-top">k</td>
+          <td class="td" id="l" value="t" onclick="calculator.display.value += 'l'" class="cal-top">l</td>
+        </tr>
+
+        <tr>
+          <td style="border: transparent; background: transparent;"></td>
+          <td style="border: transparent; background: transparent;"></td>
+          <td class="td" id="z" value="q" onclick="calculator.display.value += 'z'" class="cal-top">z</td>
+          <td class="td" id="x" value="w" onclick="calculator.display.value += 'x'" class="cal-top">x</td>
+          <td class="td" class="operator cal-top" id="c" value="e" onclick="calculator.display.value += 'c'">c</td>
+          <td class="td" id="v" value="r" onclick="calculator.display.value += 'v'" class="cal-top">v</td>
+          <td class="td" id="b" value="t" onclick="calculator.display.value += 'b'" class="cal-top">b</td>
+          <td class="td" class="operator cal-top" id="n" value="y" onclick="calculator.display.value += 'n'">n</td>
+          <td class="td" class="operator cal-top" id="m" value="e" onclick="calculator.display.value += 'm'">m</td>
+        </tr>
+      </table>
+    </div>
+  </form>
+
+<script>
+var Numberr = 200;
+
+function move(){
+    var interval = setInterval(() => {
+        Numberr = Numberr + 10;
+        down = Numberr + "px";
+        document.getElementById('q').style.top = down;
+        if (Numberr == 240){
+
+            clearInterval(interval);
+            var interval2 = setInterval(() => {
+                Numberr = Numberr - 10;
+                down = Numberr + "px";
+                document.getElementById('q').style.top = down;
+                if (Numberr == 200){
+                    clearInterval(interval2);
+                    }
+                }, 100);
+        }
+  }, 100);
+}
+
+document.getElementById('q').addEventListener('click', event => {
+    move();
+});
+</script>
+
+</body>
+</html>

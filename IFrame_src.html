@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+ 
+<head>
+  <style>
+#myDIV {
+  height: 300px;
+  width: 600px;
+  overflow: auto;
+  background: transparent;
+  border: transparent;
+}
+
+#content {
+  margin: 500px;
+  /*
+  height: 800px;
+  width: 2000px;
+  */
+  position: relative;
+  cursor: pointer;
+}
+  </style>
+</head>
+ 
+<body style="background: transparent;">
+    <div onscroll="console.log('Left: ' + document.getElementById('myDIV').scrollLeft + '\n' + 'Top: ' + document.getElementById('myDIV').scrollTop)" id="myDIV">
+  <img style="width: 2000px; height: 30px;" id="content" src="Barl LLManager.jpg">
+ </div>
+</body>
